@@ -9,21 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let myButton: UIButton = {
-        let myButton = UIButton()
+    private let myFloatingButton: UIButton = {
+        let myFloatingButton = UIButton()
         
-        myButton.layer.shadowOpacity = 0.5
-        myButton.layer.shadowRadius = 4
+        myFloatingButton.layer.shadowOpacity = 0.5
+        myFloatingButton.layer.shadowRadius = 4
         
        // myButton.layer.masksToBounds = true
-        myButton.layer.cornerRadius = 25.0
-        myButton.tintColor = .white
-        myButton.backgroundColor = .red
+        myFloatingButton.layer.cornerRadius = 25.0
+        myFloatingButton.tintColor = .white
+        myFloatingButton.backgroundColor = .red
         let myImage = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25.0, weight: .medium, scale: .medium))
-        myButton.setImage(myImage, for: .normal)
-        myButton.setTitleColor(.white, for: .normal)
-        myButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        return myButton
+        myFloatingButton.setImage(myImage, for: .normal)
+        myFloatingButton.setTitleColor(.white, for: .normal)
+        myFloatingButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        return myFloatingButton
     }()
     
     @objc func didTapButton(){
@@ -36,12 +36,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(myButton)
+        view.addSubview(myFloatingButton)
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        myButton.frame = CGRect(x: view.frame.size.width - 100, y: view.frame.size.height - 100 - view.safeAreaInsets.bottom, width: 50.0, height: 50.0)
+        myFloatingButton.frame = CGRect(x: view.frame.size.width - 100, y: view.frame.size.height - 100 - view.safeAreaInsets.bottom, width: 50.0, height: 50.0)
     }
 
 }
